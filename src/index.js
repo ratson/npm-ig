@@ -31,7 +31,7 @@ export default () => {
     }
 
     const pkgs = _.map(pkg.dependencies, (v, k) => `${k}@${v}`)
-    return spawn('npm', ['i', '-g', ...pkgs], {
+    return spawn('npm', ['i', '-loglevel', 'silent', '-g', ...pkgs], {
       stdio: 'inherit',
     })
   })
